@@ -1,0 +1,8 @@
+wandb
+einops
+fvcore
+nltk
+transformers
+fairscale
+mmengine
+pyarrow

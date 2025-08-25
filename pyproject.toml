@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.flake8]
+# Ignore only the import related errors because isort handles them.
+ignore = "I100, I201"
+
+[tool.pyright]
+include = ["opendet3d"]
+typeCheckingMode = "off"
+
+[project]
+name = "opendet3d"
+description = "3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection"
+version = "0.0.0"
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+include = ["opendet3d*"]
+
+[tool.setuptools.package-data]
+"*" = ["py.typed"]
