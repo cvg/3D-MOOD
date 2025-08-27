@@ -65,7 +65,10 @@ def get_3d_mood_swin_base(
     bbox3d_head = GroundingDINO3DHead(box_coder=box_coder)
 
     roi2det3d = RoI2Det3D(
-        max_per_img=max_per_image, score_threshold=score_thres
+        nms=True,
+        class_agnostic_nms=True,
+        max_per_img=max_per_image,
+        score_threshold=score_thres,
     )
 
     return GroundingDINO3D(
@@ -82,11 +85,16 @@ if __name__ == "__main__":
     """Demo."""
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
+    text_prompts = "chair.table"
+
     # Data
     images = np.array(Image.open("./assets/demo/rgb.png")).astype(np.float32)[
         None, ...
     ]
     intrinsics = np.load("./assets/demo/intrinsics.npy")
+
+    input_texts = text_prompts.split(".")
+    class_id_mapping = {i: text for i, text in enumerate(input_texts)}
 
     data_dict = {
         "images": images,
@@ -134,7 +142,7 @@ if __name__ == "__main__":
             original_hw=[data["original_hw"]],
             intrinsics=data["intrinsics"].to(device)[None],
             padding=[data["padding"]],
-            input_texts=["sofa"],
+            input_texts=[input_texts],
         )
 
     # Save the prediction for visualization
@@ -144,6 +152,7 @@ if __name__ == "__main__":
         intrinsics=data["original_intrinsics"].cpu().numpy(),
         scores=[s.cpu() for s in scores],
         class_ids=[c.cpu() for c in class_ids],
-        class_id_mapping={0: "sofa"},
+        class_id_mapping=class_id_mapping,
         file_path="./assets/demo/output.png",
+        n_colors=len(class_id_mapping),
     )

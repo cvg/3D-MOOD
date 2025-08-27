@@ -3,7 +3,8 @@
 # 3D-MOOD: Lifting 2D to 3D for Monocular Open-Set Object Detection
 
 <a href="https://arxiv.org/abs/2507.23567"><img src='https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white' alt='arXiv'></a>
-<a href='https://royyang0714.github.io/3D-MOOD'><img src='https://img.shields.io/badge/Project_Page-Website-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>
+<a href='https://royyang0714.github.io/3D-MOOD'><img src='https://img.shields.io/badge/Project%20Page-Website-green?logo=googlechrome&logoColor=white' alt='Project Page'></a>
+<a href='https://huggingface.co/spaces/RoyYang0714/3D-MOOD'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Live%20Demo-blue'></a> \
 <a href='https://huggingface.co/RoyYang0714/3D-MOOD'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-blue'></a>
 <a href='https://huggingface.co/datasets/RoyYang0714/3D-MOOD'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Datasets-blue'></a>
 
@@ -25,7 +26,7 @@
 
 ## News and ToDo
 
-- [x] `27.08.2025`: Add `scripts/demo.py` for demo!
+- [x] `27.08.2025`: Add `scripts/demo.py` and [Huggingface Demo](https://huggingface.co/spaces/RoyYang0714/3D-MOOD)!
 - [x] `25.08.2025`: Release code and models.
 - [x] `25.06.2025`: 3D-MOOD is accepted at ICCV 2025!
 
@@ -66,6 +67,8 @@ python scripts/demo.py
 It will save the prediction as follow to `assets/demo/output.png`.
 
 ![](assets/demo/output.png)
+
+You can also try the live demo on [here](https://huggingface.co/spaces/RoyYang0714/3D-MOOD)!
 
 ### Data Preparation
 
