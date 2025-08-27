@@ -55,15 +55,17 @@ pip install git+https://github.com/SysCV/vis4d_cuda_ops.git
 pip install -v -e .
 ```
 
-### Try the Demo
+### Demo
 
-We provide the `demo.py` to test whether the installation is complete.
+We provide the [`demo.py`](./scripts/demo.py) to test whether the installation is complete.
 
 ```bash
 python scripts/demo.py
 ```
 
-It will generate the prediction as `output.png` under `assets/demo`.
+It will save the prediction as follow to `assets/demo/output.png`.
+
+![](assets/demo/output.png)
 
 ### Data Preparation
 
