@@ -25,6 +25,7 @@
 
 ## News and ToDo
 
+- [x] `27.08.2025`: Add `scripts/demo.py` for demo!
 - [x] `25.08.2025`: Release code and models.
 - [x] `25.06.2025`: 3D-MOOD is accepted at ICCV 2025!
 
@@ -53,6 +54,16 @@ pip install git+https://github.com/SysCV/vis4d_cuda_ops.git
 # Install 3D-MOOD
 pip install -v -e .
 ```
+
+### Try the Demo
+
+We provide the `demo.py` to test whether the installation is complete.
+
+```bash
+python scripts/demo.py
+```
+
+It will generate the prediction as `output.png` under `assets/demo`.
 
 ### Data Preparation
 
