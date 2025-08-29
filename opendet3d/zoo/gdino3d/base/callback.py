@@ -38,7 +38,7 @@ def get_callback_cfg(
     omni3d_evaluator: ConfigDict | None = None,
     visualize_depth: bool = True,
 ) -> list[ConfigDict]:
-    """Get callbacks for Omni3D."""
+    """Get callbacks for 3D-MOOD."""
     # Logger
     callbacks = get_default_callbacks_cfg()
 

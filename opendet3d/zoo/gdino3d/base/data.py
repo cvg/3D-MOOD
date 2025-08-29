@@ -22,7 +22,7 @@ def get_data_cfg(
     samples_per_gpu: int = 2,
     workers_per_gpu: int = 2,
 ) -> DataConfig:
-    """Get the default config for COCO detection."""
+    """Get the data config."""
     data = DataConfig()
 
     # Train

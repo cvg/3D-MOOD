@@ -163,21 +163,6 @@ class COCO3DDataset(CacheMappingMixin, Dataset):
                 if ann["ignore"]:
                     continue
 
-                self._get_cat_id(img, ann, cat_name)
-
-                # Box 2D
-                x1, y1, width, height = ann["bbox"]
-                x2, y2 = x1 + width, y1 + height
-                boxes.append((x1, y1, x2, y2))
-
-                # Class
-                class_ids = np.concatenate(
-                    [
-                        class_ids,
-                        np.array([ann["category_id"]], dtype=np.int64),
-                    ]
-                )
-
                 # Box 3D
                 center = ann["center_cam"]
                 width, height, length = ann["dimensions"]
@@ -210,6 +195,21 @@ class COCO3DDataset(CacheMappingMixin, Dataset):
                             ],
                             dtype=np.float32,
                         ),
+                    ]
+                )
+
+                # Box 2D
+                x1, y1, width, height = ann["bbox"]
+                x2, y2 = x1 + width, y1 + height
+                boxes.append((x1, y1, x2, y2))
+
+                # Class
+                self._get_cat_id(img, ann, cat_name)
+
+                class_ids = np.concatenate(
+                    [
+                        class_ids,
+                        np.array([ann["category_id"]], dtype=np.int64),
                     ]
                 )
 

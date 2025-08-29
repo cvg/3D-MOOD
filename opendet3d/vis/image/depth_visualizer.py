@@ -11,8 +11,6 @@ from vis4d.common.array import array_to_numpy
 from vis4d.common.typing import (
     ArgsType,
     ArrayLikeFloat,
-    ArrayLikeInt,
-    ArrayLikeUInt,
     NDArrayF32,
     NDArrayUI8,
 )
