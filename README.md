@@ -123,7 +123,7 @@ For per-dataset results for Omni3D, please refer to the Table 3 of the paper.
 
 ```bash
 # Swin-T
-vis4d test --config opendet3d/zoo/gdino3d/gdino3d_swin_t_omni3d.py --gpus 1 ---ckpt https://huggingface.co/RoyYang0714/3D-MOOD/resolve/main/gdino3d_swin-t_120e_omni3d_699f69.pt
+vis4d test --config opendet3d/zoo/gdino3d/gdino3d_swin_t_omni3d.py --gpus 1 --ckpt https://huggingface.co/RoyYang0714/3D-MOOD/resolve/main/gdino3d_swin-t_120e_omni3d_699f69.pt
 
 # Swin-B 
 vis4d test --config opendet3d/zoo/gdino3d/gdino3d_swin_b_omni3d.py --gpus 1 --ckpt https://huggingface.co/RoyYang0714/3D-MOOD/resolve/main/gdino3d_swin-b_120e_omni3d_834c97.pt
