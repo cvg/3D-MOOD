@@ -50,7 +50,7 @@ conda activate opendet3d
 pip install vis4d==1.0.0
 
 # Install CUDA ops
-pip install git+https://github.com/SysCV/vis4d_cuda_ops.git
+pip install git+https://github.com/SysCV/vis4d_cuda_ops.git --no-build-isolation --no-cache-dir
 
 # Install 3D-MOOD
 pip install -v -e .
