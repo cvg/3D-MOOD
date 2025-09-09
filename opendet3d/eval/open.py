@@ -134,6 +134,9 @@ class OpenDetect3DEvaluator(Evaluator):
 
     def save(self, metric: str, output_dir: str) -> None:
         """Save the results to json files."""
+        if self.omni3d_evaluator is not None:
+            self.omni3d_evaluator.save(metric, output_dir)
+
         for dataset_name in self.dataset_names:
             self.evaluators[dataset_name].save(
                 metric, output_dir, prefix=dataset_name
