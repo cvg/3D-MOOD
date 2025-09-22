@@ -106,7 +106,25 @@ REPO_ROOT
 
 By default in our provided config we use `HDF5` as the data backend.
 You can convert each folder using the [script](https://github.com/SysCV/vis4d/blob/main/vis4d/data/io/to_hdf5.py) to generate them.
-Or you can just change the `data_backend` in the configs to `FileBackend`.
+
+It is worth noting that if you download the provided `.hdf5` from [here](https://huggingface.co/datasets/RoyYang0714/3D-MOOD), you only need to convert each omni3d dataset to HDF5.
+
+To be more specific:
+```bash
+cd data
+
+python -m vis4d.data.io.to_hdf5 -p KITTI_object
+python -m vis4d.data.io.to_hdf5 -p KITTI_object_depth # Only needed if you generate depth on your own
+
+...
+
+python -m vis4d.data.io.to_hdf5 -p hypersim
+python -m vis4d.data.io.to_hdf5 -p hypersim_depth # Only needed if you generate depth on your own
+```
+
+Then you will have all datasets in `.hdf5`.
+
+The other solution is to change the `data_backend` in the [configs](./opendet3d/zoo/gdino3d/gdino3d_swin_t_omni3d.py#50) to `FileBackend`.
 
 ### Model Zoo
 

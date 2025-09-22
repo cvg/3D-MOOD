@@ -255,6 +255,12 @@ data
 │   ├── annotations
 ```
 
+- If you want to use HDF5 as data backend. You can run and get `val.hdf5`:
+```bash
+cd data/argoverse
+python -m vis4d.data.io.to_hdf5 -p val
+```
+
 ## ScanNet
 
 Please refer [here](../scripts/scannet/README.md) for preprocessing ScanNet.
